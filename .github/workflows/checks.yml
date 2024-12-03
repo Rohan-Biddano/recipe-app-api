@@ -21,8 +21,8 @@ jobs:
           sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
       - name: Test
         run: docker-compose run --rm app sh -c "python manage.py test"
-      - name: Configure Flake8
+      - name: Configure and Lint with Flake8
         run: |
           echo "[flake8]" > .flake8
           echo "max-line-length = 100" >> .flake8
-          docker-compose run --rm app sh -c "flake8"
+          docker-compose run --rm -v $(pwd)/.flake8:/app/.flake8 app sh -c "flake8"
