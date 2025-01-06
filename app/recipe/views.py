@@ -13,7 +13,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
     """View for manage recipe APIs."""
     serializer_class = serializers.RecipeSerializer
     queryset = Recipe.objects.all()
-    authetication_classes = [TokenAuthentication]
+    authentication_classes = [TokenAuthentication]
     permission_classes  = [IsAuthenticated]
 
     def get_queryset(self):
