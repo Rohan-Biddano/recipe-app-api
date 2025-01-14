@@ -14,10 +14,10 @@ class IngredientSerializer(serializers.ModelSerializer):
     """Serializer for ingredients."""
 
     class Meta:
-        Model = Ingredient
+        model = Ingredient
         fields = ['id', 'name']
         read_only_fields = ['id']
-        
+
 
 class TagSerializer(serializers.ModelSerializer):
     """Serializer for tags."""
